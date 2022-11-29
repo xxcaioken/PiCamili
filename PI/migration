@@ -1,0 +1,46 @@
+CREATE SCHEMA IF NOT EXISTS 'PI';
+CREATE TABLE IF NOT EXISTS `pi`.`candidato` (
+  `id` INT(11) NOT NULL,
+  `nome` VARCHAR(100) NOT NULL,
+  `partido` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `pi`.`pesquisa_eleitoral`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pi`.`pesquisa_eleitoral` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id_candidato` INT(11) NOT NULL,
+  `data_pesquisa` DATE NOT NULL,
+  `intencao_voto` INT(11) NOT NULL,
+  `Fonte_pesquisa` VARCHAR(100) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `id_candidato` (`id_candidato` ASC),
+  CONSTRAINT `pesquisa_eleitoral_ibfk_1`
+    FOREIGN KEY (`id_candidato`)
+    REFERENCES `pi`.`candidato` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 19
+DEFAULT CHARACTER SET = utf8;
+
+-- -----------------------------------------------------
+-- USAR DESEMPENHO ESTA FUNCIONANDO
+-- -----------------------------------------------------
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (13, '2022-10-27', 49, 'www1.folha.uol.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (22, '2022-10-19', 49, 'www.poder360.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (13, '2022-10-19', 52, 'www.poder360.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (22, '2022-10-27', 44, 'www1.folha.uol.com.br'😉
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (22, '2022-10-29', 46, 'www.noticias.uol.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (13, '2022-10-29', 53, 'www.noticias.uol.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (22, '2022-09-05', 51, 'www.g1.globo.com');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (13, '2022-09-05', 52, 'www.g1.globo.com');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (22, '2022-09-28', 54, 'www.poder360.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (22, '2022-09-28', 51, 'www.poder360.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (15, '2022-05-26', 2, 'www.g1.globo.com');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (15, '2022-09-16', 4, 'www.g1.globo.com');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (15, '2022-09-05', 6, 'www.exame.com');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (15, '2022-05-02', 2, 'www.poder36-.com.br');
+insert into pequisa_eleitoral(id_candidato, data_pesquisa, intencao_voto, fonte_pesquisa) values (15, '2022-08-04', 4, 'cartacapital.com.br');
